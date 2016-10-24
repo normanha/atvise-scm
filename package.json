@@ -1,0 +1,37 @@
+{
+  "name": "atvise-scm",
+  "version": "0.1.2",
+  "description": "Source code management utilities for atvise",
+  "main": "out/index.js",
+  "scripts": {
+    "build": "mkdir -p out; babel src --out-dir out; mv out/Gulpfile.babel.js out/Gulpfile.js",
+    "doc": "esdoc -c esdoc.json",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lukas Hechenberger <lukas.hechenberger@bachmann.info>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "atvise-dbworker": "http://ls-age.com/tmp/atvise-dbworker-0.1.1.tar",
+    "babel-preset-node6": "^11.0.0",
+    "babel-register": "^6.16.3",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-util": "^3.0.7",
+    "through2": "^2.0.1",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "esdoc": "^0.4.8",
+    "eslint": "^3.7.1",
+    "eslint-config-lsage": "^0.1.0"
+  },
+  "babel": {
+    "presets": [
+      "node6"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "lsage"
+  }
+}
